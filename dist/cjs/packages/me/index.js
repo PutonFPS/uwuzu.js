@@ -1,0 +1,13 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.getBookmark = exports.setConfig = exports.setNotificationRead = exports.getNotification = exports.login = void 0;
+const login_1 = require("./login");
+Object.defineProperty(exports, "login", { enumerable: true, get: function () { return login_1.login; } });
+const getNotification_1 = require("./getNotification");
+Object.defineProperty(exports, "getNotification", { enumerable: true, get: function () { return getNotification_1.getNotification; } });
+const setNotificationRead_1 = require("./setNotificationRead");
+Object.defineProperty(exports, "setNotificationRead", { enumerable: true, get: function () { return setNotificationRead_1.setNotificationRead; } });
+const setConfig_1 = require("./setConfig");
+Object.defineProperty(exports, "setConfig", { enumerable: true, get: function () { return setConfig_1.setConfig; } });
+const getBookmark_1 = require("./getBookmark");
+Object.defineProperty(exports, "getBookmark", { enumerable: true, get: function () { return getBookmark_1.getBookmark; } });

@@ -1,0 +1,31 @@
+{
+  "name": "uwuzu",
+  "version": "1.0.0",
+  "author": "ぷとん@PutonFPS",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "devDependencies": {
+    "@types/express": "^5.0.5",
+    "@types/node": "^24.10.0",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "typescript": "^5.9.3"
+  },
+  "description": "uwuzuのAPIラッパー",
+  "files": [
+    "dist"
+  ],
+  "keywords": [],
+  "license": "MIT",
+  "scripts": {
+    "build:cjs": "tsc -p tsconfig.cjs.json",
+    "build:esm": "tsc -p tsconfig.esm.json",
+    "build:brow": "bun build src/index.ts --target browser --minify --outfile dist/browser/uwuzu.js",
+    "build": "bun run build:cjs && bun run build:esm && bun run build:brow",
+    "test:esm": "bun test/index.ts",
+    "test:cjs": "bun test/index.js",
+    "test:brow": "bun test/server.ts"
+  },
+  "type": "commonjs",
+  "types": "dist/esm/index.d.ts"
+}
