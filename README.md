@@ -9,5 +9,8 @@ $ npm i puton1221/uwuzu.js
 ### FOR browser
 
 ```html
-<script type="module" src="https://raw.github"></script>
+<script
+  type="module"
+  src="https://raw.githubusercontent.com/Puton1221/uwuzu.js/refs/heads/main/dist/browser/uwuzu.js"
+></script>
 ```
