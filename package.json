@@ -1,6 +1,6 @@
 {
   "name": "uwuzu",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "ぷとん@PutonFPS",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -26,6 +26,6 @@
     "test:cjs": "bun test/index.js",
     "test:brow": "bun test/server.ts"
   },
-  "type": "commonjs",
+  "type": "module",
   "types": "dist/esm/index.d.ts"
 }
