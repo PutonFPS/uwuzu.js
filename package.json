@@ -1,6 +1,6 @@
 {
-  "name": "uwuzu",
-  "version": "1.0.1",
+  "name": "@uwuzu/uwuzu.js",
+  "version": "1.0.0",
   "author": "ぷとん@PutonFPS",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -15,7 +15,10 @@
   "files": [
     "dist"
   ],
-  "keywords": [],
+  "keywords": [
+    "uwuzu",
+    "uwuzu.js"
+  ],
   "license": "MIT",
   "scripts": {
     "build:cjs": "tsc -p tsconfig.cjs.json",
