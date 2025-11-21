@@ -1,5 +1,5 @@
 {
-  "name": "@uwuzu/uwuzu.js",
+  "name": "uwuzu.js",
   "version": "1.0.0",
   "author": "ぷとん@PutonFPS",
   "main": "dist/cjs/index.js",

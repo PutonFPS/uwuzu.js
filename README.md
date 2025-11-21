@@ -3,7 +3,7 @@
 ### FOR npm
 
 ```
-$ npm i puton1221/uwuzu.js
+$ npm i uwuzu.js
 ```
 
 ### FOR browser
