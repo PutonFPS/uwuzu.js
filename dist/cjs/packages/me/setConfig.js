@@ -19,7 +19,7 @@ async function setConfig(userAgent, props) {
     if (Object.keys(request).length === 0) {
         throw new error_1.UwuzuError("変更する項目を最低でも一つは入力してください", error_1.UwuzuErrorCode.UWUZU_CONFIG_1);
     }
-    const data = await fetch(`https://${this.domain}/api/me/settings`, {
+    const data = await fetch(`https://${this.domain}/api/me/settings/`, {
         method: "POST",
         headers: {
             "User-Agent": userAgent,

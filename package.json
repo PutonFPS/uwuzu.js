@@ -1,6 +1,6 @@
 {
   "name": "uwuzu.js",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "ぷとん@PutonFPS",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
