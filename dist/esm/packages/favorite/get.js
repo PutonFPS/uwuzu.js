@@ -3,7 +3,7 @@ export async function get(userAgent, uniqId) {
     if (!this.me) {
         throw new UwuzuError("ログインコマンドを実行していません", UwuzuErrorCode.UWUZU_LOGIN_03);
     }
-    const data = await fetch(`https://${this.domain}/api/favorite/get`, {
+    const raw = await fetch(`https://${this.domain}/api/favorite/get`, {
         method: "POST",
         headers: {
             "User-Agent": userAgent,
@@ -13,5 +13,8 @@ export async function get(userAgent, uniqId) {
             uniqid: uniqId,
         }),
     }).then((res) => res.json());
-    return data;
+    const success = raw?.success ?? false;
+    const list = raw?.favorite_list;
+    const data = list.split(",").filter((str) => str !== "");
+    return { success, data };
 }

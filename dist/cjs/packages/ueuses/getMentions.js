@@ -6,7 +6,7 @@ async function getMentions(userAgent, limit, page) {
     if (!this.me) {
         throw new error_1.UwuzuError("ログインコマンドを実行していません", error_1.UwuzuErrorCode.UWUZU_LOGIN_03);
     }
-    const data = await fetch(`https://${this.domain}/api/ueuse/mentions`, {
+    const raw = await fetch(`https://${this.domain}/api/ueuse/mentions`, {
         method: "POST",
         headers: {
             "User-Agent": userAgent,
@@ -17,5 +17,10 @@ async function getMentions(userAgent, limit, page) {
             page: page,
         }),
     }).then((res) => res.json());
-    return data;
+    const entries = Object.entries(raw);
+    const success = raw?.success ?? false;
+    const data = entries
+        .filter(([key]) => !isNaN(Number(key)))
+        .map(([, value]) => value);
+    return { success, data };
 }

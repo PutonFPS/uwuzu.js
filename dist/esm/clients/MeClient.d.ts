@@ -16,7 +16,7 @@ export declare class MeClient {
      * ユーザーに向けて送信された通知を取得します。
      * * @param {object} [params] - 通知取得のためのパラーメータ（オプション）
      * @param {number} [params.limit=5] - 取得する通知の最大件数。デフォルトは5です。
-     * @param {number} [params.page=1] - 取得する通知のページ番号。デフォルトは1です。
+     * @param {number} [params.page=1] - 取得する通知のページ番号。デフォルトは0です。
      * @returns {Promise<NotificationResponse>} 通知
      */
     getNotification({ limit, page, }?: {
@@ -47,12 +47,12 @@ export declare class MeClient {
      * ユーザーのブックマークを取得します。
      * * @param {object} [params] - ブックマーク取得のためのパラーメータ（オプション）
      * @param {number} [params.limit=5] - 取得するブックマークの最大件数。デフォルトは5です。
-     * @param {number} [params.page=1] - 取得するブックマークのページ番号。デフォルトは1です。
+     * @param {number} [params.page=1] - 取得するブックマークのページ番号。デフォルトは0です。
      * @returns {Promise<NotificationResponse>} ブックマーク一覧
      */
     getBookmark({ limit, page, }?: {
         limit?: number;
         page?: number;
-    }): Promise<UeuseResponse[]>;
+    }): Promise<UeuseResponse>;
 }
 //# sourceMappingURL=MeClient.d.ts.map

@@ -79,8 +79,8 @@ export interface Notification {
     is_checked: boolean;
 }
 export interface NotificationResponse {
-    [key: string]: Notification | boolean;
     success: boolean;
+    data: Notification[];
 }
 /**
  * for simple response
@@ -95,7 +95,7 @@ export interface SimpleUserResponse {
 /**
  * for ueuse
  */
-export interface UeuseResponse {
+export interface Ueuse {
     uniqid: string;
     replyid: string;
     reuseid: string;
@@ -119,6 +119,14 @@ export interface UeuseResponse {
     abidatetime: string;
     nsfw: boolean;
 }
+export interface UeuseResponse {
+    success: boolean;
+    data: Ueuse[];
+}
+export interface UeuseGetResponse {
+    success: boolean;
+    data: Ueuse;
+}
 /**
  * for ueuse create
  */
@@ -131,7 +139,7 @@ export interface SimpleUeuseResponse {
  * for favorite
  */
 export interface FavoriteResponse {
-    favorite_list: string;
     success: boolean;
+    data: string[];
 }
 //# sourceMappingURL=types.d.ts.map

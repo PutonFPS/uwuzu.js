@@ -20,10 +20,10 @@ export class MeClient {
      * ユーザーに向けて送信された通知を取得します。
      * * @param {object} [params] - 通知取得のためのパラーメータ（オプション）
      * @param {number} [params.limit=5] - 取得する通知の最大件数。デフォルトは5です。
-     * @param {number} [params.page=1] - 取得する通知のページ番号。デフォルトは1です。
+     * @param {number} [params.page=1] - 取得する通知のページ番号。デフォルトは0です。
      * @returns {Promise<NotificationResponse>} 通知
      */
-    getNotification({ limit = 5, page = 1, } = {}) {
+    getNotification({ limit = 5, page = 0, } = {}) {
         return getNotification.call(this.parent, limit, page, this.userAgent);
     }
     /**
@@ -49,10 +49,10 @@ export class MeClient {
      * ユーザーのブックマークを取得します。
      * * @param {object} [params] - ブックマーク取得のためのパラーメータ（オプション）
      * @param {number} [params.limit=5] - 取得するブックマークの最大件数。デフォルトは5です。
-     * @param {number} [params.page=1] - 取得するブックマークのページ番号。デフォルトは1です。
+     * @param {number} [params.page=1] - 取得するブックマークのページ番号。デフォルトは0です。
      * @returns {Promise<NotificationResponse>} ブックマーク一覧
      */
-    getBookmark({ limit = 5, page = 1, } = {}) {
+    getBookmark({ limit = 5, page = 0, } = {}) {
         return getBookmark.call(this.parent, this.userAgent, limit, page);
     }
 }

@@ -13,18 +13,18 @@ class UeuseClient {
      * サーバー内のユーズ一覧を取得します。
      * * @param {object} [params] - ユーズ取得のためのパラメータ（オプション）
      * @param {number} [params.limit] - 取得するユーズの最大件数。デフォルトは5です。
-     * @param {number} [params.page] - 取得するユーズのページ番号。デフォルトは1です。
-     * @returns {Promise<UeuseResponse[]>} ユーズ一覧
+     * @param {number} [params.page] - 取得するユーズのページ番号。デフォルトは0です。
+     * @returns {Promise<UeuseResponse>} ユーズ一覧
      */
-    fetchUeuses({ limit = 5, page = 1, } = {}) {
+    fetchUeuses({ limit = 5, page = 0, } = {}) {
         return ueuses_1.fetchUeuses.call(this.parent, this.userAgent, limit, page);
     }
     /**
      * 単一ユーズを取得します。
      * @param {string} uniqId - ユーズのユニークID
-     * @returns {Promise<UeuseResponse>} ユーズ
+     * @returns {Promise<UeuseGetResponse>} ユーズ
      */
-    getUeuse(uniqId) {
+    get(uniqId) {
         return ueuses_1.get.call(this.parent, this.userAgent, uniqId);
     }
     /**
@@ -32,20 +32,20 @@ class UeuseClient {
      * @param {string} uniqId - 取得したいユーズのユニークID
      * * @param {object} [params] - 返信取得のためのパラメータ（オプション）
      * @param {number} [params.limit] - 取得する返信の最大件数。デフォルトは5です。
-     * @param {number} [params.page] - 取得する返信のページ番後。デフォルトは1です。
-     * @returns {Promise<UeuseResponse[]>} 返信
+     * @param {number} [params.page] - 取得する返信のページ番後。デフォルトは0です。
+     * @returns {Promise<UeuseResponse>} 返信
      */
-    getReplies(uniqId, { limit = 5, page = 1 } = {}) {
+    getReplies(uniqId, { limit = 5, page = 0 } = {}) {
         return ueuses_1.getReplies.call(this.parent, this.userAgent, uniqId, limit, page);
     }
     /**
      * メンションされたユーズを取得します。
      * * @param {object} [params] - メンション取得のためのパラメータ（オプション）
      * @param {number} [params.limit] - 取得するユーズの最大件数。デフォルトは5です。
-     * @param {number} [params.page] - 取得するユーズのページ番後。デフォルトは1です。
-     * @returns {Promise<UeuseResponse[]>} ユーズ一覧
+     * @param {number} [params.page] - 取得するユーズのページ番後。デフォルトは0です。
+     * @returns {Promise<UeuseResponse>} ユーズ一覧
      */
-    getMentions({ limit = 5, page = 1, } = {}) {
+    getMentions({ limit = 5, page = 0, } = {}) {
         return ueuses_1.getMentions.call(this.parent, this.userAgent, limit, page);
     }
     /**
@@ -53,10 +53,10 @@ class UeuseClient {
      * @param {string} keyword - 検索キーワード
      * * @param {object} [params] - ユーズ取得のためのパラメータ（オプション）
      * @param {number} [params.limit] - 取得するユーズの最大件数。デフォルトは5です。
-     * @param {number} [params.page] - 取得するユーズのページ番後。デフォルトは1です。
-     * @returns {Promise<UeuseResponse[]>} 検索結果
+     * @param {number} [params.page] - 取得するユーズのページ番後。デフォルトは0です。
+     * @returns {Promise<UeuseResponse>} 検索結果
      */
-    search(keyword, { limit = 5, page = 1 } = {}) {
+    search(keyword, { limit = 5, page = 0 } = {}) {
         return ueuses_1.search.call(this.parent, this.userAgent, keyword, limit, page);
     }
     /**

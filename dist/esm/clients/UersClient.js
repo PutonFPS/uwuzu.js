@@ -1,4 +1,4 @@
-import { getUser, setUserFollow } from "../packages/users";
+import { get, setFollow } from "../packages/users";
 export class UsersClient {
     parent;
     userAgent;
@@ -11,8 +11,8 @@ export class UsersClient {
      * @param {string} userId - 検索するユーザーID
      * @returns {Promise<User>} ユーザー情報
      */
-    getUser(userId) {
-        return getUser.call(this.parent, userId, this.userAgent);
+    get(userId) {
+        return get.call(this.parent, userId, this.userAgent);
     }
     /**
      *
@@ -20,7 +20,7 @@ export class UsersClient {
      * @param {boolean} status - フォロー状態（trueでフォロー、falseでフォロー解除）
      * @returns {Promise<SimpleUserResponse>}
      */
-    setUserFollow(userId, status) {
-        return setUserFollow.call(this.parent, userId, this.userAgent, status);
+    setFollow(userId, status) {
+        return setFollow.call(this.parent, userId, this.userAgent, status);
     }
 }

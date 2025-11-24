@@ -1,5 +1,5 @@
 import { Uwuzu } from "..";
-import { SimpleUeuseResponse, UeuseResponse } from "../helper/types";
+import { SimpleUeuseResponse, UeuseGetResponse, UeuseResponse } from "../helper/types";
 export declare class UeuseClient {
     private parent;
     private userAgent;
@@ -8,54 +8,54 @@ export declare class UeuseClient {
      * サーバー内のユーズ一覧を取得します。
      * * @param {object} [params] - ユーズ取得のためのパラメータ（オプション）
      * @param {number} [params.limit] - 取得するユーズの最大件数。デフォルトは5です。
-     * @param {number} [params.page] - 取得するユーズのページ番号。デフォルトは1です。
-     * @returns {Promise<UeuseResponse[]>} ユーズ一覧
+     * @param {number} [params.page] - 取得するユーズのページ番号。デフォルトは0です。
+     * @returns {Promise<UeuseResponse>} ユーズ一覧
      */
     fetchUeuses({ limit, page, }?: {
         limit?: number;
         page?: number;
-    }): Promise<UeuseResponse[]>;
+    }): Promise<UeuseResponse>;
     /**
      * 単一ユーズを取得します。
      * @param {string} uniqId - ユーズのユニークID
-     * @returns {Promise<UeuseResponse>} ユーズ
+     * @returns {Promise<UeuseGetResponse>} ユーズ
      */
-    getUeuse(uniqId: string): Promise<UeuseResponse>;
+    get(uniqId: string): Promise<UeuseGetResponse>;
     /**
      * ユーズの返信を取得します。
      * @param {string} uniqId - 取得したいユーズのユニークID
      * * @param {object} [params] - 返信取得のためのパラメータ（オプション）
      * @param {number} [params.limit] - 取得する返信の最大件数。デフォルトは5です。
-     * @param {number} [params.page] - 取得する返信のページ番後。デフォルトは1です。
-     * @returns {Promise<UeuseResponse[]>} 返信
+     * @param {number} [params.page] - 取得する返信のページ番後。デフォルトは0です。
+     * @returns {Promise<UeuseResponse>} 返信
      */
     getReplies(uniqId: string, { limit, page }?: {
         limit?: number;
         page?: number;
-    }): Promise<UeuseResponse[]>;
+    }): Promise<UeuseResponse>;
     /**
      * メンションされたユーズを取得します。
      * * @param {object} [params] - メンション取得のためのパラメータ（オプション）
      * @param {number} [params.limit] - 取得するユーズの最大件数。デフォルトは5です。
-     * @param {number} [params.page] - 取得するユーズのページ番後。デフォルトは1です。
-     * @returns {Promise<UeuseResponse[]>} ユーズ一覧
+     * @param {number} [params.page] - 取得するユーズのページ番後。デフォルトは0です。
+     * @returns {Promise<UeuseResponse>} ユーズ一覧
      */
     getMentions({ limit, page, }?: {
         limit?: number;
         page?: number;
-    }): Promise<UeuseResponse[]>;
+    }): Promise<UeuseResponse>;
     /**
      * ユーズを検索します。
      * @param {string} keyword - 検索キーワード
      * * @param {object} [params] - ユーズ取得のためのパラメータ（オプション）
      * @param {number} [params.limit] - 取得するユーズの最大件数。デフォルトは5です。
-     * @param {number} [params.page] - 取得するユーズのページ番後。デフォルトは1です。
-     * @returns {Promise<UeuseResponse[]>} 検索結果
+     * @param {number} [params.page] - 取得するユーズのページ番後。デフォルトは0です。
+     * @returns {Promise<UeuseResponse>} 検索結果
      */
     search(keyword: string, { limit, page }?: {
         limit?: number;
         page?: number;
-    }): Promise<UeuseResponse[]>;
+    }): Promise<UeuseResponse>;
     /**
      * ユーズを作成します。
      * * @param {object} [props] - ユーズ作成のためのパラメータ（textは必須）

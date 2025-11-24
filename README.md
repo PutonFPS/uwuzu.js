@@ -119,8 +119,8 @@ interface Role {
 
 ```ts
 interface NotificationResponse {
-  [key: string]: Notification | boolean;
   success: boolean;
+  data: Notification[];
 }
 ```
 
@@ -170,10 +170,17 @@ interface Notification {
 }
 ```
 
-`UeuseResponse[]`を返します。
+`UeuseResponse`を返します。
 
 ```ts
 interface UeuseResponse {
+  success: boolean;
+  data: Ueuse[];
+}
+```
+
+```ts
+interface Ueuse {
   uniqid: string;
   replyid: string;
   reuseid: string;

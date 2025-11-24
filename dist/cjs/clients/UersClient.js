@@ -14,8 +14,8 @@ class UsersClient {
      * @param {string} userId - 検索するユーザーID
      * @returns {Promise<User>} ユーザー情報
      */
-    getUser(userId) {
-        return users_1.getUser.call(this.parent, userId, this.userAgent);
+    get(userId) {
+        return users_1.get.call(this.parent, userId, this.userAgent);
     }
     /**
      *
@@ -23,8 +23,8 @@ class UsersClient {
      * @param {boolean} status - フォロー状態（trueでフォロー、falseでフォロー解除）
      * @returns {Promise<SimpleUserResponse>}
      */
-    setUserFollow(userId, status) {
-        return users_1.setUserFollow.call(this.parent, userId, this.userAgent, status);
+    setFollow(userId, status) {
+        return users_1.setFollow.call(this.parent, userId, this.userAgent, status);
     }
 }
 exports.UsersClient = UsersClient;

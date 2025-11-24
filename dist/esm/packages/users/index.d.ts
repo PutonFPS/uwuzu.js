@@ -1,4 +1,4 @@
-import { getUser } from "./getUser";
-import { setUserFollow } from "./setUserFollow";
-export { getUser, setUserFollow };
+import { get } from "./get";
+import { setFollow } from "./setFollow";
+export { get, setFollow };
 //# sourceMappingURL=index.d.ts.map

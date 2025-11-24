@@ -3,7 +3,7 @@ export async function getNotification(limit, page, userAgent) {
     if (!this.me) {
         throw new UwuzuError(`ログインコマンドを実行していません`, UwuzuErrorCode.UWUZU_LOGIN_03);
     }
-    const data = await fetch(`https://${this.domain}/api/me/notification/`, {
+    const raw = await fetch(`https://${this.domain}/api/me/notification/`, {
         method: "POST",
         headers: {
             "User-Agent": userAgent,
@@ -14,5 +14,10 @@ export async function getNotification(limit, page, userAgent) {
             page: page,
         }),
     }).then((res) => res.json());
-    return data;
+    const entries = Object.entries(raw);
+    const success = raw?.success ?? false;
+    const data = entries
+        .filter(([key]) => !isNaN(Number(key)))
+        .map(([, value]) => value);
+    return { success, data };
 }
